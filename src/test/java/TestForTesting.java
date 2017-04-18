@@ -1,6 +1,8 @@
 
 import static junit.framework.Assert.assertTrue;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,10 +17,22 @@ import org.junit.Test;
 public class TestForTesting {
     
     @Test
+    
     public void trueHello() throws Exception{
         ForTesting test=new ForTesting();
         assertTrue(test.value());
     }
-    
+    @Test
+	@Category(com.mycompany.category.UnitTests.class)
+	public void appUnitTest() {
+		System.out.println("Unit test");
+	}
+
+	@Test
+	@Category(com.mycompany.category.IntegrationTests.class)
+	public void appIntegrationTest() {
+		System.out.println("Integration test");
+	}
+
     
 }

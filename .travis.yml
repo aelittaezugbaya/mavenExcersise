@@ -1,1 +1,4 @@
 language: java
+script: 
+    - mvn test -DskipTests=false -PunitTests -B
+    - mvn test -DskipTests=false -PintegrationTests -B
